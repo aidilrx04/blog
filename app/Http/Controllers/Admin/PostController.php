@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -22,7 +23,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|string',
+            'slug' => 'required|string',
+            'content' => 'required|string'
+        ]);
+
+        $post = Post::create($validated);
+
+
+        return redirect()->route('admin.posts.create');
     }
 
     /**
