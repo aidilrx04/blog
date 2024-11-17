@@ -1,34 +1,47 @@
-<!DOCTYPE html>
-<html lang="en">
+<x-layouts.admin>
+    <form class="form" action="{{ route("admin.posts.store") }}" method="POST">
+        @csrf
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Create Post</title>
+        <div class="mb-6 rounded-xl bg-surface p-6">
+            <span class="text-white mb-2 block text-xl font-medium">Title</span>
+            <input
+                class="border-gray-700 block w-full rounded-xl border-2 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
+                type="text"
+                name="title"
+                placeholder="Title"
+            />
+        </div>
 
-    @vite('resources/css/app.css')
-</head>
+        <div class="mb-6 rounded-xl bg-surface p-6">
+            <span class="text-white mb-2 block text-xl font-medium">Slug</span>
+            <input
+                class="border-gray-700 block w-full rounded-xl border-2 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
+                type="text"
+                name="slug"
+                placeholder="slug-title"
+            />
+        </div>
+        <div class="mb-6 rounded-xl bg-surface p-6">
+            <span class="text-white mb-2 block text-xl font-medium">
+                Content
+            </span>
+            <textarea
+                class="border-gray-700 block w-full rounded-xl border-2 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
+                name="content"
+                id="content"
+                cols="30"
+                rows="10"
+            ></textarea>
+        </div>
 
-<body>
-
-    <header class="bg-gray-800 p-3">
-        <h1 class="text-white font-semibold text-xl">Aidil's Blog</h1>
-    </header>
-
-    <main class="p-3">
-        <form class="form" action="{{ route('admin.posts.store') }}" method="POST">
-            @csrf
-            <input class="block mb-1 border rounded p-3" type="text" name="title" placeholder="Title">
-            <input class="block mb-1 border rounded p-3" type="text" name="slug" placeholder="Slug">
-            <textarea class="block mb-1 border rounded p-3" name="content" id="content" cols="30" rows="10"></textarea>
-            <button class="block text-white bg-blue-600 rounded py-1.5 px-3.5">Submit</button>
-        </form>
-    </main>
-
-    <footer class="text-center text-gray-500">
-        &copy; 2024 @aidilrx04
-    </footer>
-</body>
-
-</html>
+        <div class="mb-6 rounded-xl bg-surface p-6">
+            <div class="flex items-center justify-end">
+                <button
+                    class="text-black rounded-xl bg-primary px-4 py-2 font-medium"
+                >
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</x-layouts.admin>
