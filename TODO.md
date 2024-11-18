@@ -2,7 +2,7 @@
 
 ## v1
 
-1. add post image, excerpt
+1. add post image, excerpt [x]
 
 1. create post using tinymce
 
