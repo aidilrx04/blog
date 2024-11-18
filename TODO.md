@@ -4,7 +4,7 @@
 
 1. add post image, excerpt [x]
 
-1. create post factory
+1. create post factory [x]
 
 1. create post seeder
 
