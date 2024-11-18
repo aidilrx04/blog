@@ -10,6 +10,8 @@ class Post extends Model
         'user_id',
         'title',
         'slug',
-        'content'
+        'content',
+        'image',
+        'excerpt'
     ];
 }
