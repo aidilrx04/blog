@@ -8,7 +8,7 @@
 
 1. create post seeder [x]
 
-1. seed posts
+1. seed posts [x]
 
 1. create post using tinymce
 
