@@ -1,8 +1,9 @@
 @aware([
     "title" => null,
+    "head" => null,
 ])
 
-<x-layouts.base>
+<x-layouts.base :$title :$head>
     <header class="fixed left-0 top-0 z-10 flex h-[96px] w-full">
         <div
             class="ml-[196px] flex flex-1 items-center justify-between bg-background px-4"

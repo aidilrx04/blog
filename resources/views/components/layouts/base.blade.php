@@ -1,5 +1,6 @@
 @props([
     "title" => null,
+    "head" => null,
 ])
 
 <!DOCTYPE html>
@@ -12,6 +13,8 @@
         <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
         @vite("resources/css/app.css")
+
+        {{ $head }}
     </head>
 
     <body class="relative min-h-screen bg-background text-default">
