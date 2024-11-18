@@ -6,7 +6,7 @@
 
 1. create post factory [x]
 
-1. create post seeder
+1. create post seeder [x]
 
 1. seed posts
 
