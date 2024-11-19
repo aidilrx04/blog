@@ -18,7 +18,7 @@
 
 1. [x] precreate post when nagivating to /posts/create
 
-1. [ ] add published and draft status
+1. [x] add published and draft status
 
 1. [ ] add image upload api
 
