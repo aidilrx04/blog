@@ -34,20 +34,29 @@
                             Post Title
                         </span>
                     </div>
-                    <div class="post">
-                        {{--
-                            <div
+                    <div
+                        class="prose prose-xl prose-green prose-invert prose-a:text-primary prose-a:decoration-primary prose-strong:text-primary prose-li:marker:text-primary"
+                    >
+                        <div
                             class="h-[400px] rounded-xl border-2 border-surface p-4"
-                            id="inline-editor"
-                            ></div>
-                        --}}
+                            id="editor"
+                        ></div>
+
                         <textarea
+                            name="content"
+                            id="textarea-content"
+                            class="hidden"
+                        ></textarea>
+
+                        {{--
+                            <textarea
                             class="block w-full rounded-xl border-2 border-gray-700 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
                             name="content"
                             id="editor"
                             cols="30"
                             rows="10"
-                        ></textarea>
+                            ></textarea>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -90,11 +99,11 @@
     <script>
         $(function () {
             const $form = $('#create-form');
-            const $editorTextare = $('#editor');
+            const $editorTextare = $('#textarea-content');
 
             tinymce.init({
                 selector: '#editor',
-                // inline: true,
+                inline: true,
                 // menubar: false,
                 plugins: ['save'],
                 // menubar: 'save',
@@ -102,6 +111,7 @@
             });
 
             $form.on('submit', function (e) {
+                // e.preventDefault();
                 const editorContent = tinymce.activeEditor.getContent();
 
                 $editorTextare.val(editorContent);

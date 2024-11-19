@@ -14,7 +14,7 @@
 
 1. [x] create post using tinymce 
 
-1. [ ] create post using inline tinymce post
+1. [x] create post using inline tinymce post
 
 1. [ ] precreate post when nagivating to /posts/create
 
