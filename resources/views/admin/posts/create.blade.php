@@ -11,6 +11,8 @@
     >
         @csrf
 
+        <input type="hidden" name="post_id" value="{{ $post->id }}" />
+
         {{-- {{ dump($errors) }} --}}
 
         @if ($errors->any())

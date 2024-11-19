@@ -17,7 +17,18 @@ class PostController extends Controller
 
     public function create()
     {
-        return view('admin.posts.create');
+
+        // create post for reference
+
+        $post = new Post([
+            'title' => '',
+            'content' => '',
+            'slug' => '',
+        ]);
+
+        $post->save();
+
+        return view('admin.posts.create', compact('post'));
     }
 
     /**

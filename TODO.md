@@ -16,7 +16,7 @@
 
 1. [x] create post using inline tinymce post
 
-1. [ ] precreate post when nagivating to /posts/create
+1. [x] precreate post when nagivating to /posts/create
 
 1. [ ] add published and draft status
 
