@@ -2,30 +2,28 @@
 
 ## v1
 
-1. add post image, excerpt [x]
+1. [x] add post image, excerpt
 
-1. create post factory [x]
+1. [x] create post factory
 
-1. create post seeder [x]
+1. [x] create post seeder 
 
-1. seed posts [x]
+1. [x] seed posts 
 
-1. style every format like h1, p, and so on [x]
+1. [x] style every format like h1, p, and so on 
 
-1. create post using tinymce [x]
+1. [x] create post using tinymce 
 
-1. create post using inline tinymce post
+1. [ ] create post using inline tinymce post
 
-1. precreate post when nagivating to /posts/create
+1. [ ] precreate post when nagivating to /posts/create
 
-1. add published and draft status
+1. [ ] add published and draft status
 
-1. add image upload api
+1. [ ] add image upload api
 
-1. auto generate slug url from title
+1. [ ] auto generate slug url from title
 
-1. create home page
+1. [ ] create home page
 
-1. stylize the home page
-
-1. 
+1. [ ] stylize the home page
