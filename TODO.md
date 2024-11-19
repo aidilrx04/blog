@@ -10,7 +10,7 @@
 
 1. seed posts [x]
 
-1. style every format like h1, p, and so on
+1. style every format like h1, p, and so on [x]
 
 1. create post using tinymce
 
