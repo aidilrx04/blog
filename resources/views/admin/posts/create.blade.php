@@ -1,6 +1,8 @@
 <x-layouts.admin title="Create Post">
     <x-slot:head>
         <script src="{{ asset("assets/tinymce/js/tinymce/tinymce.min.js") }}"></script>
+
+        @vite("resources/js/app.js")
     </x-slot>
 
     <form
@@ -71,6 +73,7 @@
                         class="mb-4 block w-full rounded-xl border-2 border-gray-700 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
                         type="text"
                         name="title"
+                        id="title"
                         placeholder="Title"
                     />
                     <span class="mb-2 block text-xl font-medium text-white">
@@ -80,6 +83,7 @@
                         class="block w-full rounded-xl border-2 border-gray-700 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
                         type="text"
                         name="slug"
+                        id="slug"
                         placeholder="slug-title"
                     />
                 </div>
@@ -101,6 +105,8 @@
     <script>
         $(function () {
             const $form = $('#create-form');
+            const $title = $('#title');
+            const $slug = $('#slug');
             const $editorTextare = $('#textarea-content');
 
             tinymce.init({
@@ -117,6 +123,35 @@
                 const editorContent = tinymce.activeEditor.getContent();
 
                 $editorTextare.val(editorContent);
+            });
+
+            $title.on('change', function (e) {
+                const title = $title.val();
+
+                // generate slug
+                const path = '{{ route("api.generate_slug") }}';
+
+                axios
+                    .post(
+                        path,
+                        {
+                            title: title,
+                        },
+                        {
+                            headers: {
+                                'Content-Type': 'application/json',
+                                Accept: 'application/json',
+                            },
+                        },
+                    )
+                    .then(({ data }) => {
+                        const { slug } = data;
+
+                        $slug.val(slug);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
             });
         });
     </script>

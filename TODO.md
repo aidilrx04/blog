@@ -22,7 +22,7 @@
 
 1. [ ] add image upload api
 
-1. [ ] auto generate slug url from title
+1. [x] auto generate slug url from title
 
 1. [ ] create home page
 
