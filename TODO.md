@@ -24,9 +24,9 @@
 
 1. [x] auto generate slug url from title
 
-1. [ ] create home page
+1. [x] create home page
 
-1. [ ] stylize the home page
+1. [x] stylize the home page
 
 1. [ ] create post by updating the precreate post
 
