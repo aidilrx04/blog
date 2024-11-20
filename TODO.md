@@ -27,3 +27,7 @@
 1. [ ] create home page
 
 1. [ ] stylize the home page
+
+1. [ ] create post by updating the precreate post
+
+1. [ ] 
