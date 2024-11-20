@@ -37,12 +37,19 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
+            'post_id' => 'required|integer',
             'title' => 'required|string',
             'slug' => 'required|string',
             'content' => 'required|string'
         ]);
 
-        $post = Post::create($validated);
+        $post = Post::find($validated['post_id']);
+
+        $post->update([
+            'title' => $validated['title'],
+            'slug' => $validated['slug'],
+            'content' => $validated['content'],
+        ]);
 
 
         return redirect()->route('admin.posts.create');

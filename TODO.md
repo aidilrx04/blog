@@ -28,6 +28,6 @@
 
 1. [x] stylize the home page
 
-1. [ ] create post by updating the precreate post
+1. [x] create post by updating the precreate post
 
 1. [ ] 
