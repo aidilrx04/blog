@@ -30,4 +30,18 @@
 
 1. [x] create post by updating the precreate post
 
-1. [ ] 
+1. [ ] add set post image input
+
+1. [ ] display post status on admin
+
+1. [ ] add edit page
+
+1. [ ] redirect to edit page when clicked on created post at admin index
+
+1. [ ] add options to set published date
+
+1. [ ] add option post published status
+
+1. [ ] hide empty titled posts
+
+1. [ ]
