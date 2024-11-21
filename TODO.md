@@ -30,7 +30,7 @@
 
 1. [x] create post by updating the precreate post
 
-1. [ ] add set post image input
+1. [x] add set post image input
 
 1. [ ] display post status on admin
 

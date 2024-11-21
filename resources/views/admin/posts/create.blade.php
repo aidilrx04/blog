@@ -86,6 +86,18 @@
                         id="slug"
                         placeholder="slug-title"
                     />
+
+                    <span class="mb-2 block text-xl font-medium text-white">
+                        Image
+                    </span>
+                    <input
+                        class="block w-full cursor-pointer rounded-xl border-2 border-gray-700 bg-background px-4 py-2.5 outline-none file:rounded-full file:border-0 file:bg-primary/20 file:px-4 file:py-2 file:text-primary focus:ring-2 focus:ring-primary"
+                        accept="image/*"
+                        type="file"
+                        name="image"
+                        id="image"
+                        placeholder="Post Image"
+                    />
                 </div>
                 <div class="mb-6 rounded-xl bg-surface p-6">
                     <div class="flex items-center justify-end">
