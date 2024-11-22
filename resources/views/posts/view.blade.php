@@ -1,3 +1,7 @@
+@php
+    $image = $post->image;
+@endphp
+
 <x-layouts.base>
     <main
         class="mx-auto w-full max-w-full p-4 pt-24 transition-all md:w-[600px] lg:w-[800px]"
@@ -7,9 +11,9 @@
         </h1>
 
         <article
-            class="prose prose-xl prose-invert prose-a:text-primary prose-a:decoration-primary prose-li:marker:text-primary prose-strong:text-primary prose-green"
+            class="prose prose-xl prose-green prose-invert prose-a:text-primary prose-a:decoration-primary prose-strong:text-primary prose-li:marker:text-primary"
         >
-            <img src="{{ $post->image }}" alt="" />
+            <img src="{{ route("uploads.view", $image->name) }}" alt="" />
 
             {!! $post->content !!}
         </article>
