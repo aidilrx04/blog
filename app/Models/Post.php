@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Post extends Model
 {
@@ -15,7 +16,16 @@ class Post extends Model
         'title',
         'slug',
         'content',
-        'image',
+        'image_id',
         'excerpt'
     ];
+
+    protected $with = [
+        'image'
+    ];
+
+    public function image(): HasOne
+    {
+        return $this->hasOne(Upload::class, 'image_id');
+    }
 }
