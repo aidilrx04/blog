@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Post extends Model
@@ -24,8 +25,8 @@ class Post extends Model
         'image'
     ];
 
-    public function image(): HasOne
+    public function image(): BelongsTo
     {
-        return $this->hasOne(Upload::class, 'image_id');
+        return $this->belongsTo(Upload::class, 'image_id');
     }
 }
