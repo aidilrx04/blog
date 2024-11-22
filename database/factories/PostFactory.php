@@ -21,7 +21,6 @@ class PostFactory extends Factory
             'title' => fake()->sentence(),
             'slug' => Str::slug(fake()->sentence()),
             'content' => fake()->randomHtml(10, 10),
-            'image' => 'https://loremflickr.com/1920/1080',
             'excerpt' => fake()->paragraph()
         ];
     }
