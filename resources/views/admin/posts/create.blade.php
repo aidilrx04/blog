@@ -10,6 +10,7 @@
         action="{{ route("admin.posts.store") }}"
         method="POST"
         id="create-form"
+        enctype="multipart/form-data"
     >
         @csrf
 

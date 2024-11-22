@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\Upload;
 use Illuminate\Http\Request;
 
 class PostController extends Controller
@@ -40,10 +41,23 @@ class PostController extends Controller
             'post_id' => 'required|integer',
             'title' => 'required|string',
             'slug' => 'required|string',
-            'content' => 'required|string'
+            'content' => 'required|string',
+            'image' => 'image'
         ]);
 
         $post = Post::find($validated['post_id']);
+
+        if ($request->has('image')) {
+            $image = $request->file('image');
+
+            $filename = $image->hashName();
+
+            $upload = Upload::uploadFile($filename, $image->getContent());
+
+            if ($upload) {
+                $post->image()->associate($upload);
+            }
+        }
 
         $post->update([
             'title' => $validated['title'],
