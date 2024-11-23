@@ -1,6 +1,6 @@
 <x-layouts.admin title="Posts | Aidil">
     <div class="rounded-xl bg-surface p-6">
-        <h1 class="text-white mb-4 text-2xl font-medium">Posts</h1>
+        <h1 class="mb-4 text-2xl font-medium text-white">Posts</h1>
 
         <ul class="grid grid-cols-3 gap-6">
             @foreach ($posts as $post)
@@ -10,9 +10,9 @@
                         href="{{ route("view_post", $post->slug) }}"
                     >
                         <div class="img flex-1 bg-background"></div>
-                        <div class="text-white p-4 font-medium capitalize">
+                        <div class="p-4 font-medium capitalize text-white">
                             <span>
-                                {{ $post->title }}
+                                {{ empty(trim($post->title)) === false ? $post->title : "(no title)" }}
                             </span>
                         </div>
                     </a>
