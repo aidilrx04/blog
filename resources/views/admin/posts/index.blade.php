@@ -27,6 +27,7 @@
                             <form
                                 action="{{ route("admin.posts.destroy", $post->id) }}"
                                 method="POST"
+                                onsubmit="return confirm('Confirm delete this post?')"
                             >
                                 @csrf
                                 @method("DELETE")
