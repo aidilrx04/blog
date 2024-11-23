@@ -34,11 +34,13 @@
         <div class="mb-4 flex gap-3 pt-8">
             <div class="flex-1">
                 <div class="mx-auto max-w-[600px]">
-                    <div class="title mb-8">
+                    {{--
+                        <div class="title mb-8">
                         <span class="mb-8 px-4 text-4xl font-medium text-white">
-                            Post Title
+                        Post Title
                         </span>
-                    </div>
+                        </div>
+                    --}}
                     <div
                         class="prose prose-xl prose-green prose-invert prose-a:text-primary prose-a:decoration-primary prose-strong:text-primary prose-li:marker:text-primary"
                     >
