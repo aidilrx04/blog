@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Classes\PostStatus;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Models\Upload;
@@ -63,6 +64,7 @@ class PostController extends Controller
             'title' => $validated['title'],
             'slug' => $validated['slug'],
             'content' => $validated['content'],
+            'status' => PostStatus::PUBLISHED
         ]);
 
 
