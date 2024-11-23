@@ -1,9 +1,17 @@
+@php
+    use Carbon\Carbon;
+@endphp
+
 <x-layouts.admin title="Posts | Aidil">
     <div class="rounded-xl bg-surface p-6">
         <h1 class="mb-4 text-2xl font-medium text-white">Posts</h1>
 
         <ul class="grid grid-cols-3 gap-6">
             @foreach ($posts as $post)
+                @php
+                    $last_updated_at = Carbon::parse($post->updated_at)->format("d/m/Y \a\\t g:i a");
+                @endphp
+
                 <li>
                     <a
                         class="group relative flex aspect-square h-full w-full flex-col overflow-hidden rounded-xl bg-background shadow-sm transition-all hover:-translate-x-2 hover:-translate-y-2 hover:shadow-[4px_4px_1px_theme(colors.primary)]"
@@ -16,10 +24,17 @@
                                 class="size-full max-h-full max-w-full object-cover"
                             />
                         </div>
-                        <div class="p-4 font-medium capitalize text-white">
-                            <span>
+                        <div class="p-4">
+                            <span
+                                class="mb-2 block font-medium capitalize text-white"
+                            >
                                 {{ empty(trim($post->title)) === false ? $post->title : "(no title)" }}
                             </span>
+
+                            <div class="flex items-center gap-2 text-sm">
+                                <i class="ph ph-clock"></i>
+                                <span>{{ $last_updated_at }}</span>
+                            </div>
                         </div>
                         <div
                             class="absolute right-0 top-0 hidden group-hover:block"
