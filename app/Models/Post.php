@@ -18,7 +18,8 @@ class Post extends Model
         'slug',
         'content',
         'image_id',
-        'excerpt'
+        'excerpt',
+        'status'
     ];
 
     protected $with = [
