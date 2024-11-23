@@ -66,7 +66,7 @@ class PostController extends Controller
         ]);
 
 
-        return redirect()->route('admin.posts.create');
+        return redirect()->route('admin.posts.index');
     }
 
     /**
