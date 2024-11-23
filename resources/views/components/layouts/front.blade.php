@@ -42,4 +42,10 @@
     </header>
 
     {{ $slot }}
+
+    <footer class="mt-4 px-4 py-8 text-center font-medium text-white">
+        <span>&copy;</span>
+        <span>Aidil</span>
+        <span>{{ now()->format("Y") }}</span>
+    </footer>
 </x-layouts.base>
