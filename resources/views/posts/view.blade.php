@@ -13,7 +13,9 @@
         <article
             class="prose prose-xl prose-green prose-invert prose-a:text-primary prose-a:decoration-primary prose-strong:text-primary prose-li:marker:text-primary"
         >
-            <img src="{{ route("uploads.view", $image->name) }}" alt="" />
+            @if ($image)
+                <img src="{{ route("uploads.view", $image->name) }}" alt="" />
+            @endif
 
             {!! $post->content !!}
         </article>
