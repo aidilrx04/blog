@@ -1,3 +1,7 @@
+@php
+    $image = $post->image;
+@endphp
+
 <x-layouts.admin title="Create Post">
     <x-slot:head>
         <script src="{{ asset("assets/tinymce/js/tinymce/tinymce.min.js") }}"></script>
@@ -7,12 +11,13 @@
 
     <form
         class="form"
-        action="{{ route("admin.posts.store") }}"
+        action="{{ route("admin.posts.update", $post->id) }}"
         method="POST"
         id="create-form"
         enctype="multipart/form-data"
     >
         @csrf
+        @method("PUT")
 
         <input type="hidden" name="post_id" value="{{ $post->id }}" />
 
@@ -45,9 +50,11 @@
                         class="prose prose-xl prose-green prose-invert prose-a:text-primary prose-a:decoration-primary prose-strong:text-primary prose-li:marker:text-primary"
                     >
                         <div
-                            class="h-[400px] rounded-xl border-2 border-surface p-4"
+                            class="min-h-[400px] rounded-xl border-2 border-surface p-4 focus-within:outline-none focus-within:ring-2 focus-within:ring-primary"
                             id="editor"
-                        ></div>
+                        >
+                            {!! $post->content !!}
+                        </div>
 
                         <textarea
                             name="content"
@@ -78,21 +85,33 @@
                         name="title"
                         id="title"
                         placeholder="Title"
+                        value="{{ $post->title }}"
                     />
                     <span class="mb-2 block text-xl font-medium text-white">
                         Slug
                     </span>
                     <input
-                        class="block w-full rounded-xl border-2 border-gray-700 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
+                        class="mb-4 block w-full rounded-xl border-2 border-gray-700 bg-background px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary"
                         type="text"
                         name="slug"
                         id="slug"
                         placeholder="slug-title"
+                        value="{{ $post->slug }}"
                     />
 
                     <span class="mb-2 block text-xl font-medium text-white">
                         Image
                     </span>
+
+                    @if ($image)
+                        <div class="mb-2">
+                            <img
+                                src="{{ route("uploads.view", $image->name) }}"
+                                alt=""
+                            />
+                        </div>
+                    @endif
+
                     <input
                         class="block w-full cursor-pointer rounded-xl border-2 border-gray-700 bg-background px-4 py-2.5 outline-none file:rounded-full file:border-0 file:bg-primary/20 file:px-4 file:py-2 file:text-primary focus:ring-2 focus:ring-primary"
                         accept="image/*"

@@ -30,7 +30,9 @@ class PostController extends Controller
 
         $post->save();
 
-        return view('admin.posts.create', compact('post'));
+        return redirect()->route('admin.posts.edit', $post->id);
+
+        // return view('admin.posts.create', compact('post'));
     }
 
     /**
@@ -82,9 +84,9 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        return view('admin.posts.edit');
+        return view('admin.posts.create', compact('post'));
     }
 
     /**
@@ -92,7 +94,36 @@ class PostController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $validated = $request->validate([
+            'post_id' => 'required|integer',
+            'title' => 'required|string',
+            'slug' => 'required|string',
+            'content' => 'required|string',
+            'image' => 'image'
+        ]);
+
+        $post = Post::find($validated['post_id']);
+
+        if ($request->has('image')) {
+            $image = $request->file('image');
+
+            $filename = $image->hashName();
+
+            $upload = Upload::uploadFile($filename, $image->getContent());
+
+            if ($upload) {
+                $post->image()->associate($upload);
+            }
+        }
+
+        $post->update([
+            'title' => $validated['title'],
+            'slug' => $validated['slug'],
+            'content' => $validated['content'],
+            'status' => PostStatus::PUBLISHED
+        ]);
+
+        return redirect()->route('admin.posts.edit', $post->id);
     }
 
     /**
