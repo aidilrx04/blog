@@ -15,7 +15,7 @@
                 <li>
                     <a
                         class="group relative flex aspect-square h-full w-full flex-col overflow-hidden rounded-xl bg-background shadow-sm transition-all hover:-translate-x-2 hover:-translate-y-2 hover:shadow-[4px_4px_1px_theme(colors.primary)]"
-                        href="{{ route("admin.posts.edit", $post->slug) }}"
+                        href="{{ route("admin.posts.edit", $post->id) }}"
                     >
                         <div class="img flex-1 overflow-hidden bg-background">
                             <img
