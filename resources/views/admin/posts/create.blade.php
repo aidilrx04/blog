@@ -149,10 +149,15 @@
                 selector: '#editor',
                 inline: true,
                 // menubar: false,
-                plugins: ['save', 'image'],
+                plugins: ['save', 'image', 'link', 'code', 'list'],
                 // menubar: 'save',
                 license_key: 'gpl',
                 file_picker_types: 'file image media',
+                toolbar: [
+                    'undo redo | styles |  link image code',
+                    ' bold italic underline striketrough | alignleft aligncenter alignright | numlist bullist | indent outdent',
+                ],
+                images_upload_handler: handleImageUpload,
             });
 
             $form.on('submit', function (e) {
