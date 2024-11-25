@@ -38,7 +38,9 @@
 
         <div class="mb-4 flex gap-3 pt-8">
             <div class="flex-1">
-                <div class="mx-auto max-w-[600px]">
+                <div
+                    class="mx-auto max-w-[600px] transition-[padding-top] focus-within:pt-24"
+                >
                     {{--
                         <div class="title mb-8">
                         <span class="mb-8 px-4 text-4xl font-medium text-white">
