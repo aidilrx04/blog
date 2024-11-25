@@ -149,9 +149,10 @@
                 selector: '#editor',
                 inline: true,
                 // menubar: false,
-                plugins: ['save'],
+                plugins: ['save', 'image'],
                 // menubar: 'save',
                 license_key: 'gpl',
+                file_picker_types: 'file image media',
             });
 
             $form.on('submit', function (e) {
@@ -190,6 +191,43 @@
                     });
             });
         });
+
+        function handleImageUpload(e, progress) {
+            const blob = e.blob();
+            const upload_url = '{{ route("api.upload") }}';
+            const upload_base = '{{ route("uploads.view", "REPLACE_URL") }}';
+
+            return new Promise((resolve, reject) => {
+                const formData = new FormData();
+                formData.append('file', blob);
+
+                axios
+                    .post(upload_url, formData, {
+                        headers: {
+                            Accept: 'application/json',
+                            'Content-Type': 'multipart/form-data',
+                        },
+                    })
+                    .then((res) => {
+                        const { data } = res;
+                        console.log(data);
+
+                        const location = upload_base.replace(
+                            'REPLACE_URL',
+                            data.name,
+                        );
+
+                        resolve(location);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                        reject({
+                            message: err.response.data.message,
+                            remove: true,
+                        });
+                    });
+            });
+        }
     </script>
     <style>
         .tox-promotion {
