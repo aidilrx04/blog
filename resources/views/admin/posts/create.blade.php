@@ -128,11 +128,20 @@
                     />
                 </div>
                 <div class="mb-6 rounded-xl bg-surface p-6">
-                    <div class="flex items-center justify-end">
+                    <div class="flex items-center justify-end gap-2">
+                        <button
+                            class="rounded-xl border-2 border-primary px-4 py-2 font-medium text-white hover:bg-primary hover:text-black"
+                            name="status"
+                            value="DRAFT"
+                        >
+                            Save Draft
+                        </button>
                         <button
                             class="rounded-xl bg-primary px-4 py-2 font-medium text-black"
+                            name="status"
+                            value="PUBLISHED"
                         >
-                            Submit
+                            Publish
                         </button>
                     </div>
                 </div>

@@ -99,7 +99,8 @@ class PostController extends Controller
             'title' => 'required|string',
             'slug' => 'required|string',
             'content' => 'required|string',
-            'image' => 'image'
+            'image' => 'image',
+            'status' => 'required|string'
         ]);
 
         $post = Post::find($validated['post_id']);
@@ -120,7 +121,7 @@ class PostController extends Controller
             'title' => $validated['title'],
             'slug' => $validated['slug'],
             'content' => $validated['content'],
-            'status' => PostStatus::PUBLISHED
+            'status' => $validated['status']
         ]);
 
         return redirect()->route('admin.posts.edit', $post->id);
