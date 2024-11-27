@@ -149,7 +149,7 @@
                 selector: '#editor',
                 inline: true,
                 // menubar: false,
-                plugins: ['save', 'image', 'link', 'code', 'list'],
+                plugins: ['save', 'image', 'link', 'code', 'lists'],
                 // menubar: 'save',
                 license_key: 'gpl',
                 file_picker_types: 'file image media',
