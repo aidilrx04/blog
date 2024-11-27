@@ -242,7 +242,7 @@
     <script>
         // autosave post
         $(function () {
-            const saveInterval = 1 * 1000; // every 30 sec
+            const saveInterval = 30 * 1000; // every 30 sec
             const save_path = '{{ route("api.posts.autosave") }}';
 
             const $saveStatus = $('#save_status');
