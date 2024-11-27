@@ -28,6 +28,6 @@ class AutoSavePostController extends Controller
 
         $post->save();
 
-        return response()->json([], 200);
+        return response()->json($post, 200);
     }
 }

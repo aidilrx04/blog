@@ -58,6 +58,10 @@
                             {!! $post->content !!}
                         </div>
 
+                        <small class="hidden text-right" id="save_status">
+                            Post save at
+                        </small>
+
                         <textarea
                             name="content"
                             id="textarea-content"
@@ -232,6 +236,58 @@
                         });
                     });
             });
+        }
+    </script>
+
+    <script>
+        // autosave post
+        $(function () {
+            const saveInterval = 1 * 1000; // every 30 sec
+            const save_path = '{{ route("api.posts.autosave") }}';
+
+            const $saveStatus = $('#save_status');
+
+            const postId = $('[name="post_id"]').val();
+            const $title = $('#title');
+            const $slug = $('#slug');
+
+            setInterval(() => {
+                const title = $title.val();
+                const slug = $slug.val();
+                const content = tinymce.activeEditor.getContent();
+
+                axios
+                    .post(save_path, {
+                        post_id: postId,
+                        title: title,
+                        slug: slug,
+                        content: content,
+                    })
+                    .then((res) => {
+                        const { data } = res;
+                        const savedDate = new Date(data.updated_at);
+
+                        const formattedDated = formatSavedPostDate(savedDate);
+
+                        $saveStatus.removeClass('hidden');
+                        $saveStatus.addClass('block');
+                        $saveStatus.text('Saved at ' + formattedDated);
+                    })
+                    .catch((err) => {
+                        console.error(err);
+                    });
+            }, saveInterval);
+        });
+
+        function formatSavedPostDate(date) {
+            const dd = String(date.getDate()).padStart(2, '0');
+            const mm = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+            const yyyy = date.getFullYear();
+            const HH = String(date.getHours()).padStart(2, '0');
+            const MM = String(date.getMinutes()).padStart(2, '0');
+            const SS = String(date.getSeconds()).padStart(2, '0');
+
+            return `${dd}/${mm}/${yyyy} ${HH}:${MM}:${SS}`;
         }
     </script>
     <style>
