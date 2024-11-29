@@ -6,6 +6,16 @@
 
                 <h1 class="mb-4 text-2xl font-medium text-white">Register</h1>
 
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div
+                            class="mb-2 rounded border-2 border-red-900 bg-red-100 px-4 py-2 text-red-900"
+                        >
+                            {{ $error }}
+                        </div>
+                    @endforeach
+                @endif
+
                 <label for="name" class="mb-4 block">
                     <span class="mb-2 block font-medium">Name</span>
                     <input
