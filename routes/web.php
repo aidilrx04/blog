@@ -22,6 +22,8 @@ Route::group([], function () {
 
         Route::post('register', [AuthController::class, 'register'])->name('register_submit');
         Route::post('login', [AuthController::class, 'login'])->name('login_submit');
+
+        Route::get('logout', [AuthController::class, 'logout'])->name('logout');
     });
 
     Route::get('{post:slug}', [PostController::class, 'view'])->name('view_post');

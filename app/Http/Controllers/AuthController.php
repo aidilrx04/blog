@@ -56,4 +56,12 @@ class AuthController extends Controller
             'failed' => 'Invalid email/password'
         ]);
     }
+
+    public function logout()
+    {
+
+        Auth::logout();
+
+        return redirect()->route('auth.login');
+    }
 }
