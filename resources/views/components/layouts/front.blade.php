@@ -3,6 +3,10 @@
     "head" => null,
 ])
 
+@php
+    $user = request()->user();
+@endphp
+
 <x-layouts.base {{ $attributes }}>
     {{-- Navbar --}}
 
@@ -16,10 +20,10 @@
             >
                 Aidil
             </a>
-            <nav>
-                <ul
-                    class="flex items-center gap-4 text-xl font-medium uppercase tracking-wider text-white"
-                >
+            <nav
+                class="flex flex-1 items-center justify-between text-xl font-medium uppercase tracking-wider text-white"
+            >
+                <ul class="flex items-center gap-4">
                     <li class="px-4">
                         <a
                             href="{{ route("index") }}"
@@ -35,6 +39,15 @@
                         >
                             Project
                         </a>
+                    </li>
+                </ul>
+
+                <ul class="flex items-center justify-end gap-4">
+                    <li>
+                        <a href="{{ route("auth.login") }}">SIGN IN</a>
+                    </li>
+                    <li>
+                        <a href="{{ route("auth.register") }}">SIGN UP</a>
                     </li>
                 </ul>
             </nav>
