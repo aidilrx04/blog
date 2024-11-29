@@ -4,6 +4,8 @@
 ])
 
 @php
+    use Illuminate\Support\Str;
+
     $user = request()->user();
 @endphp
 
@@ -43,12 +45,22 @@
                 </ul>
 
                 <ul class="flex items-center justify-end gap-4">
-                    <li>
-                        <a href="{{ route("auth.login") }}">SIGN IN</a>
-                    </li>
-                    <li>
-                        <a href="{{ route("auth.register") }}">SIGN UP</a>
-                    </li>
+                    @if ($user)
+                        <li>
+                            <div>
+                                <a href="{{ route("admin.posts.index") }}">
+                                    {{ Str::limit($user->name, 5) }}
+                                </a>
+                            </div>
+                        </li>
+                    @else
+                        <li>
+                            <a href="{{ route("auth.login") }}">SIGN IN</a>
+                        </li>
+                        <li>
+                            <a href="{{ route("auth.register") }}">SIGN UP</a>
+                        </li>
+                    @endif
                 </ul>
             </nav>
         </div>
