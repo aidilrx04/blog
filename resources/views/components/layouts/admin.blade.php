@@ -3,6 +3,10 @@
     "head" => null,
 ])
 
+@php
+    $user = request()->user();
+@endphp
+
 <x-layouts.base :$title :$head>
     <header class="fixed left-0 top-0 z-10 flex h-[96px] w-full">
         <div
@@ -10,11 +14,14 @@
         >
             <div class="sidebard-toggler">
                 <i
-                    class="ph-bold ph-text-indent text-white cursor-pointer text-2xl"
+                    class="ph-bold ph-text-indent cursor-pointer text-2xl text-white"
                 ></i>
             </div>
             <div class="profile">
-                <div class="size-14 rounded-full bg-surface"></div>
+                {{-- <div class="size-14 rounded-full bg-surface"></div> --}}
+                <span class="text-xl font-medium uppercase text-white">
+                    {{ $user->name }}
+                </span>
             </div>
         </div>
     </header>
