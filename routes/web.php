@@ -39,7 +39,8 @@ Route::group([
 
 Route::group([
     'prefix' => 'admin',
-    'as' => 'admin.'
+    'as' => 'admin.',
+    'middleware' => ['auth']
 ], function () {
     Route::resource('posts', AdminPostController::class);
 });
