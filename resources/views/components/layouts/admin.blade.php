@@ -17,12 +17,34 @@
                     class="ph-bold ph-text-indent cursor-pointer text-2xl text-white"
                 ></i>
             </div>
-            <div class="profile">
+            <button
+                class="profile group relative flex h-full items-center justify-center"
+            >
                 {{-- <div class="size-14 rounded-full bg-surface"></div> --}}
                 <span class="text-xl font-medium uppercase text-white">
                     {{ $user->name }}
                 </span>
-            </div>
+
+                <div
+                    class="absolute right-0 top-full hidden min-w-[300px] overflow-hidden rounded-lg bg-surface shadow-xl group-focus-within:block group-hover:block group-focus:block"
+                >
+                    <ul
+                        class="flex flex-col items-stretch justify-center py-4 text-lg font-medium text-white"
+                    >
+                        <li>
+                            <a
+                                href="{{ route("auth.logout") }}"
+                                class="flex w-full flex-1 items-center justify-start gap-3 px-4 py-2 hover:bg-background/25"
+                            >
+                                <i
+                                    class="ph-bold ph-sign-out text-white/75"
+                                ></i>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </button>
         </div>
     </header>
     <div class="relative flex h-full min-h-screen w-full">
