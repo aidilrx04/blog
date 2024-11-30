@@ -1,6 +1,7 @@
 @props([
     "title" => null,
     "head" => null,
+    "body_class" => null,
 ])
 
 <!DOCTYPE html>
@@ -17,7 +18,9 @@
         {{ $head }}
     </head>
 
-    <body class="relative min-h-screen bg-background text-default">
+    <body
+        class="{{ $body_class }} group/sidebar sidebar-show relative min-h-screen bg-background text-default"
+    >
         {{ $slot }}
     </body>
 </html>
