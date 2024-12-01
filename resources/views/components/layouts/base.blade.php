@@ -19,7 +19,7 @@
     </head>
 
     <body
-        class="{{ $body_class }} group/sidebar sidebar-show relative min-h-screen bg-background text-default"
+        class="{{ $body_class }} group/sidebar relative min-h-screen bg-background text-default"
     >
         {{ $slot }}
     </body>
