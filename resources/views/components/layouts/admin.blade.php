@@ -36,7 +36,10 @@
         <div
             class="ml-[96px] flex flex-1 items-center justify-between bg-background px-4 transition-[margin-left] group-[.sidebar-show]/sidebar:ml-[300px]"
         >
-            <button id="sidebar-toggle" class="sidebard-toggler">
+            <button
+                id="sidebar-toggle"
+                class="sidebard-toggler size-14 cursor-pointer rounded-full bg-transparent hover:bg-surface"
+            >
                 <i
                     class="ph-bold ph-text-indent cursor-pointer text-2xl text-white"
                 ></i>
