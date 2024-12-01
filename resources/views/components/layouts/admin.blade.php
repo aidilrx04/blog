@@ -18,6 +18,17 @@
             "route" => route("admin.posts.create"),
         ],
     ]);
+
+    if (! function_exists("active_route")) {
+        function active_route($url)
+        {
+            if (url()->current() === $url) {
+                return "active";
+            }
+
+            return "";
+        }
+    }
 @endphp
 
 <x-layouts.base :$title :$head>
@@ -81,14 +92,18 @@
                 <nav class="overflow-y-auto">
                     <ul class="flex flex-col gap-4">
                         @foreach ($sidebar_navs as $nav)
-                            <li class="px-4">
+                            <li
+                                class="{{ active_route($nav["route"]) }} group/nav-link px-4"
+                            >
                                 <a
-                                    class="flex items-center justify-center gap-2 overflow-hidden rounded-lg px-4 py-2 text-lg text-white/25 hover:bg-surface group-[.sidebar-show]/sidebar:justify-start"
+                                    class="flex items-center justify-center gap-2 overflow-hidden rounded-lg px-4 py-2 text-lg text-white/25 hover:bg-surface group-[.sidebar-show]/sidebar:justify-start group-[.active]/nav-link:bg-primary"
                                     href="{{ $nav["route"] }}"
                                 >
-                                    <i class="{{ $nav["icon"] }} text-4xl"></i>
+                                    <i
+                                        class="{{ $nav["icon"] }} text-4xl group-[.active]/nav-link:text-surface/50"
+                                    ></i>
                                     <span
-                                        class="hidden w-0 overflow-hidden text-xl text-white transition-[width] group-[.sidebar-show]/sidebar:visible group-[.sidebar-show]/sidebar:inline-block group-[.sidebar-show]/sidebar:w-auto"
+                                        class="hidden w-0 overflow-hidden text-xl text-white transition-[width] group-[.sidebar-show]/sidebar:visible group-[.sidebar-show]/sidebar:inline-block group-[.sidebar-show]/sidebar:w-auto group-[.active]/nav-link:text-surface"
                                     >
                                         {{ $nav["label"] }}
                                     </span>
