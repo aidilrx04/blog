@@ -4,4 +4,4 @@ use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'index']);
-Route::get('/posts/{post}', [MainController::class, 'show']);
+Route::get('/posts/{post}', [MainController::class, 'show'])->name('posts.show');

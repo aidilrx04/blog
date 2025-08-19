@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+
+    @vite(['resources/css/app.css'])
+</head>
+
+<body>
+    <div id="app" class="min-h-dvh bg-radial-[at_50%_80%] from-gray-800 to-gray-900 bg-fixed text-gray-200">
+        <div id="header" class="container mx-auto max-w-4xl px-3 py-3.5 flex items-baseline gap-16">
+            <div id="logo">
+                <a href="/">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-600 text-4xl font-semibold">Blog</span>
+                </a>
+            </div>
+            <nav id="nav">
+                <ul class="flex items-baseline justify-center gap-8 text-2xl text-gray-300">
+                    <li>
+                        <a href="/posts" class="hover:text-gray-50 transition">
+                            Posts
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/admin/login" class="hover:text-gray-50 transition">
+                            Sign In
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <div id="main" class="container max-w-4xl mx-auto px-3 py-8">
+            {{ $slot }}
+        </div>
+    </div>
+
+</body>
+
+</html>
