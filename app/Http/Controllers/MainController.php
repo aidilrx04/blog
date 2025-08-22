@@ -11,13 +11,14 @@ class MainController extends Controller
     public function index()
     {
 
-        $posts = Post::all();
+        $posts = Post::where('publish_status', 'published')->get();
 
         return view("components.main.index", compact("posts"));
     }
 
     public function show(Post $post)
     {
+        if ($post->publish_status !== 'published') abort(404);
         return view("components.main.show", compact("post"));
     }
 }
