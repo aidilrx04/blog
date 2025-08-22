@@ -11,7 +11,7 @@
 
 <body>
     <div id="app" class="min-h-dvh bg-radial-[at_50%_80%] from-gray-800 to-gray-900 bg-fixed text-gray-200 relative"
-        style="--background-path: url('{{ asset('storage/assets/background.svg') }}')">
+        style="--background-path: url('{{ asset('assets/background.svg') }}')">
 
         <div class="z-0 absolute size-full left-0 top-0 bg-(image:--background-path) bg-fixed bg-repeat-x bg-bottom-left"></div>
 
