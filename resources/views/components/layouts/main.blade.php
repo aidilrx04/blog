@@ -1,12 +1,22 @@
+@props([
+'title' => null,
+'head' => null
+])
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>
+        {{ $title ?? '' }} {{ $title ? '/' : '' }}
+        &lt;Blog /&gt;
+    </title>
 
     @vite(['resources/css/app.css'])
+
+    {{ $head }}
 </head>
 
 <body>
