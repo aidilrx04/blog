@@ -25,7 +25,7 @@
                 class="block group rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-gray-800 hover:bg-gray-800/50">
                 <div
                     class="w-full aspect-square flex items-end px-4 py-3 relative">
-                    <img src="{{ asset('storage/'.$bg_image) }}" alt="" class="size-full absolute left-0 top-0 block object-cover group-hover:brightness-75">
+                    <img src="{{ asset($bg_image) }}" alt="" class="size-full absolute left-0 top-0 block object-cover group-hover:brightness-75">
                     <h2 class="relative font-semibold text-lg text-white group-hover:text-blue-400 line-clamp-2 h-[2lh] ">
                         {{ $post->title }}
                     </h2>
