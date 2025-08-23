@@ -4,9 +4,9 @@ $post_image = $post->image ?? "assets/default-post-background.svg";
 
 <x-layouts.main :title="$post->title">
 	<x-slot:head>
-		<meta name="ogp:title" content="{{ $post->title }}">
-		<meta name="ogp:image" content="{{ asset($post_image) }}">
-		<meta name="ogp:type" content="article">
+		<meta name="og:title" content="{{ $post->title }}">
+		<meta name="og:image" content="{{ asset($post_image) }}">
+		<meta name="og:type" content="article">
 		<link rel="canonical" href="{{ route('posts.show', ['post' => $post->id]) }}">
 	</x-slot:head>
 
