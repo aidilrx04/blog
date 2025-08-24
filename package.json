@@ -5,7 +5,8 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "compile": "node utils/js/compile.prod.js"
+        "compile": "node utils/js/compile.prod.js",
+        "deploy": "pnpm run compile && php artisan blog:deploy"
     },
     "devDependencies": {
         "@tailwindcss/typography": "^0.5.16",
