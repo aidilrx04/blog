@@ -4,9 +4,15 @@ $post_image = $post->image ?? "assets/default-post-background.svg";
 
 <x-layouts.main :title="$post->title">
 	<x-slot:head>
+		<meta name="description" content="{{ str($post->content)->take(200) }}">
 		<meta name="og:title" content="{{ $post->title }}">
-		<meta name="og:image" content="{{ asset($post_image) }}">
+		<meta name="og:description" content="{{ str($post->content)->take(200) }}">
+		<meta name="og:url" content="{{ route('posts.show', ['post' => $post->id]) }}">
 		<meta name="og:type" content="article">
+		<meta name="og:image" content="{{ asset($post_image) }}">
+		<meta name="og:image:alt" content="{{ $post->title . ' article image' }}">
+		<meta name="og:site_name" content="Aidil's Blog">
+		<meta name="og:locale" content="en_US">
 		<link rel="canonical" href="{{ route('posts.show', ['post' => $post->id]) }}">
 	</x-slot:head>
 

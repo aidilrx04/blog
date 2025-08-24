@@ -1,4 +1,18 @@
 <x-layouts.main>
+
+    <x-slot:head>
+        <meta name="description" content="Knowledge for All, Unlock learning without limits. Accessible, Inspiring and Built for everyone">
+        <meta name="keywords" content="blog, aidil.dev, aidil blog, knowledge">
+        <meta name="og:title" content="<Blog/> Aidil">
+        <meta name="og:description" content="Knowledge for All, Unlock learning without limits. Accessible, Inspiring and Built for everyone">
+        <meta name="og:url" content="{{ route('posts.index') }}">
+        <meta name="og:type" content="website">
+        <meta name="og:image" content="{{ asset("assets/default-post-background.svg") }}">
+        <meta name="og:image:alt" content="Aidil's Blog Logo">
+        <meta name="og:site_name" content="Aidil's Blog">
+        <meta name="og:locale" content="en_US">
+    </x-slot:head>
+
     <div class="hero h-72 flex flex-col items-center justify-center -mt-8 text-center">
         <!-- <h1 class="font-semibold text-5xl"><span class="text-blue-400">Knowledge</span> for <span class="text-teal-600">All</span></h1> -->
         <h1 class="font-black text-6xl leading-tight tracking-tight text-gray-900">
@@ -10,7 +24,7 @@
                 All
             </span>
         </h1>
-        <p class="mt-4 text-lg text-gray-500 max-w-2xl">
+        <p class="mt-4 text-xl text-gray-500 max-w-2xl">
             Unlock learning without limits. Accessible, Inspiring, and Built for Everyone.
         </p>
     </div>
@@ -26,7 +40,7 @@
                     href="{{ route('posts.show', $post->id) }}"
                     class="block group">
                     <div
-                        class="w-full rounded-2xl overflow-hidden aspect-video flex items-end px-4 py-3 relative shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-gray-800 hover:bg-gray-800/50">
+                        class="w-full rounded-2xl overflow-hidden aspect-4/3 flex items-end px-4 py-3 relative shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-gray-800 hover:bg-gray-800/50">
                         <img src="{{ asset($bg_image) }}" alt="" class="size-full absolute left-0 top-0 block object-cover group-hover:brightness-75">
 
                     </div>
