@@ -14,6 +14,10 @@
         &lt;Blog /&gt;
     </title>
 
+    <!-- Fav Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="" href="">
+
     @vite(['resources/css/app.css'])
 
     {{ $head }}
