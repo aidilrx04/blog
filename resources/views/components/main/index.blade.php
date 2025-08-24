@@ -11,6 +11,7 @@
         <meta name="og:image:alt" content="Aidil's Blog Logo">
         <meta name="og:site_name" content="Aidil's Blog">
         <meta name="og:locale" content="en_US">
+        <link rel="canonical" href="{{ route('posts.index') }}">
     </x-slot:head>
 
     <div class="hero h-72 flex flex-col items-center justify-center -mt-8 text-center">
