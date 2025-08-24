@@ -16,7 +16,30 @@
 
     <!-- Fav Icons -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="" href="">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="assets/favicons/favicon-16x16.svg">
+    <!-- iPhone/iPad home screen icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/favicon-180x180.png">
+
+    <!-- iOS Safari configuration -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Android home screen icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicons/favicon-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicons/favicon-512x512.png">
+
+    <!-- Android theme integration -->
+    <meta name="theme-color" content="#1e2939">
+
+    <!-- Windows Metro tiles -->
+    <meta name="msapplication-TileImage" content="assets/favicons/favicon-180x180.png">
+    <meta name="msapplication-TileColor" content="#1e2939">
+
+    <!-- Windows configuration file -->
+    <meta name="msapplication-config" content="">
+
 
     @vite(['resources/css/app.css'])
 
