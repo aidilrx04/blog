@@ -53,4 +53,8 @@
         </li>
         @endforeach
     </ul>
+
+    <div class="paginator py-3.5">
+        {{ $posts->links() }}
+    </div>
 </x-layouts.main>

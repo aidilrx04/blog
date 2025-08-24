@@ -11,7 +11,7 @@ class MainController extends Controller
     public function index()
     {
 
-        $posts = Post::where('publish_status', 'published')->get();
+        $posts = Post::where('publish_status', 'published')->paginate(10);
 
         return view("components.main.index", compact("posts"));
     }
