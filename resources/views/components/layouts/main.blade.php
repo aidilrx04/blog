@@ -4,7 +4,7 @@
 ])
 
 <!DOCTYPE html>
-<html lang="en" prefix="og: https://ogp.me/ns#">
+<html lang="en" prefix="og: https://ogp.me/ns#" class="bg-radial-[at_50%_80%] from-gray-800 to-gray-900 bg-fixed">
 
 <head>
     <meta charset="UTF-8">
@@ -46,7 +46,7 @@
     {{ $head }}
 </head>
 
-<body>
+<body class="bg-radial-[at_50%_80%] from-gray-800 to-gray-900 bg-fixed">
     <div id="app" class="min-h-dvh bg-radial-[at_50%_80%] from-gray-800 to-gray-900 bg-fixed text-gray-200 relative"
         style="--background-path: url('{{ asset('assets/background.svg') }}')">
 
