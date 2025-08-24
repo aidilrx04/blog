@@ -79,6 +79,12 @@
                 {{ $slot }}
             </div>
         </div>
+
+        <footer class="px-3 pt-3.5 pb-16">
+            <p class="text-center">
+                &copy; {{ date('Y') }} <a href="https://aidil.dev" class="font-semibold hover:cursor-pointer">aidil.dev</a>
+            </p>
+        </footer>
     </div>
 
 </body>
