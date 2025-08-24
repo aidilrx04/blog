@@ -75,9 +75,9 @@
                 </nav>
             </div>
 
-            <div id="main" class="container max-w-4xl mx-auto px-3 py-8">
+            <main id="main" class="container max-w-4xl mx-auto px-3 py-8 h-full">
                 {{ $slot }}
-            </div>
+            </main>
         </div>
 
         <footer class="px-3 pt-3.5 pb-16">
