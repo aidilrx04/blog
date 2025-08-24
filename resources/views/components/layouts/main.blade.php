@@ -53,7 +53,7 @@
         <div class="z-0 absolute size-full left-0 top-0 bg-(image:--background-path) bg-fixed bg-repeat-x bg-bottom-left"></div>
 
         <div class="content relative z-10 flex flex-col min-h-dvh">
-            <div id="header" class="container mx-auto max-w-4xl px-3 py-3.5 flex items-baseline gap-16">
+            <div id="header" class="container mx-auto max-w-4xl px-4 py-3.5 flex items-baseline gap-16">
                 <div id="logo">
                     <a href="/">
                         <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-600 text-4xl font-semibold">Blog</span>
@@ -75,7 +75,7 @@
                 </nav>
             </div>
 
-            <main id="main" class="container flex-1 max-w-4xl mx-auto px-3 py-8 h-full">
+            <main id="main" class="container flex-1 max-w-4xl mx-auto px-4 py-8 h-full">
                 {{ $slot }}
             </main>
 
