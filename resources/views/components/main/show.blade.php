@@ -23,7 +23,7 @@ $post_image = $post->image ?? "assets/default-post-background.svg";
 
 		<div class="prose prose-xl text-justify dark:prose-invert max-w-none text-gray-400
 		prose-h2:font-semibold prose-h2:text-3xl prose-h3:font-2xl prose-a:text-teal-500 prose-a:bg-clip-text prose-a:bg-gradient-to-r prose-a:from-blue-400 prose-a:to-teal-600
-		prose-img:block prose-img:mx-auto">
+		prose-img:block prose-img:mx-auto prose-headings:text-start">
 			<p>
 				{!! $post->content !!}
 			</p>
