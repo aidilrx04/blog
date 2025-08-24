@@ -52,7 +52,7 @@
 
         <div class="z-0 absolute size-full left-0 top-0 bg-(image:--background-path) bg-fixed bg-repeat-x bg-bottom-left"></div>
 
-        <div class="content relative z-10">
+        <div class="content relative z-10 flex flex-col min-h-dvh">
             <div id="header" class="container mx-auto max-w-4xl px-3 py-3.5 flex items-baseline gap-16">
                 <div id="logo">
                     <a href="/">
@@ -60,7 +60,7 @@
                     </a>
                 </div>
                 <nav id="nav">
-                    <ul class="flex items-baseline justify-center gap-8 text-2xl text-gray-300">
+                    <ul class="flex items-baseline justify-center gap-8 text-xl uppercase text-gray-300">
                         <!-- <li>
                             <a href="/posts" class="hover:text-gray-50 transition">
                                 Posts
@@ -75,16 +75,16 @@
                 </nav>
             </div>
 
-            <main id="main" class="container max-w-4xl mx-auto px-3 py-8 h-full">
+            <main id="main" class="container flex-1 max-w-4xl mx-auto px-3 py-8 h-full">
                 {{ $slot }}
             </main>
-        </div>
 
-        <footer class="px-3 pt-3.5 pb-16">
-            <p class="text-center">
-                &copy; {{ date('Y') }} <a href="https://aidil.dev" class="font-semibold hover:cursor-pointer">aidil.dev</a>
-            </p>
-        </footer>
+            <footer class="px-3 pt-3.5 pb-16">
+                <p class="text-center">
+                    &copy; {{ date('Y') }} <a href="https://aidil.dev" class="font-semibold hover:cursor-pointer">aidil.dev</a>
+                </p>
+            </footer>
+        </div>
     </div>
 
 </body>
