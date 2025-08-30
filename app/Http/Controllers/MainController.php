@@ -23,4 +23,13 @@ class MainController extends Controller
         if ($post->publish_status !== 'published') abort(404);
         return view("components.main.show", compact("post"));
     }
+
+    public function sitemap()
+    {
+        $posts = Post::wherePublishStatus("published")->get();
+
+        return response(view("components.main.sitemap", compact('posts')), 200, [
+            'Content-Type' => 'application/xml'
+        ]);
+    }
 }
