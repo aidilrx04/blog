@@ -18,6 +18,7 @@ class PostFactory extends Factory
     {
         return [
             'title' => fake()->words(asText: true),
+            'slug' => fake()->slug(),
             'publish_status' => fake()->randomElement(['draft', 'published']),
             'content' => fake()->paragraphs(5, true),
         ];
