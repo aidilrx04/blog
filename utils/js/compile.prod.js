@@ -13,6 +13,13 @@ const lastCommitFile = path.join(__dirname, 'lastcommit.txt');
 const blogZipPath = path.join(process.cwd(), 'blog.zip');
 
 try {
+  // 0. Ensure we are on master branch
+  const branch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
+  if (branch !== 'master') {
+    console.error(`❌ Not on master branch (currently on: ${branch}). Aborting.`);
+    process.exit(1);
+  }
+
   // 1. Read last commit id
   let lastCommit = '';
   try {
@@ -21,11 +28,11 @@ try {
     console.log('No lastcommit.txt found, assuming first run.');
   }
 
-  // 2. Get current commit id
-  const currentCommit = execSync('git rev-parse HEAD').toString().trim();
+  // 2. Get current commit id on master
+  const currentCommit = execSync('git rev-parse master').toString().trim();
 
   if (lastCommit && lastCommit !== currentCommit) {
-    // 3. Get changed files only
+    // 3. Get changed files between last commit and current master
     const diffFiles = execSync(`git diff --name-only ${lastCommit} ${currentCommit}`, {
       encoding: 'utf8'
     }).trim();
