@@ -8,7 +8,9 @@ use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Components\Group;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
+use Illuminate\Support\Str;
 
 class PostForm
 {
@@ -23,7 +25,12 @@ class PostForm
                             ->fileAttachmentsDisk('public')
                             ->fileAttachmentsDirectory('images'),
                         Group::make([
-                            TextInput::make('title'),
+                            TextInput::make('title')
+                                ->live(onBlur: true)
+                                ->afterStateUpdated(function ($state, Set $set) {
+                                    $set('slug', Str::slug($state));
+                                }),
+                            TextInput::make('slug'),
                             FileUpload::make('image')
                                 ->disk('public')
                                 ->directory('images'),

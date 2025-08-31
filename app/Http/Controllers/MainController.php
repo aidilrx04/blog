@@ -18,8 +18,12 @@ class MainController extends Controller
         return view("components.main.index", compact("posts"));
     }
 
-    public function show(Post $post)
+    public function show(string $slug)
     {
+        $post = Post::where("slug", $slug)->first();
+
+        if (!$post) abort(404);
+
         if ($post->publish_status !== 'published') abort(404);
         return view("components.main.show", compact("post"));
     }

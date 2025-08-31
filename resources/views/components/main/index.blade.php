@@ -38,7 +38,7 @@
             <article>
 
                 <a
-                    href="{{ route('posts.show', $post->id) }}"
+                    href="{{ $post->getUrl() }}"
                     class="block group">
                     <div
                         class="w-full rounded-2xl overflow-hidden aspect-4/3 flex items-end px-4 py-3 relative shadow-md hover:shadow-xl transition-shadow duration-300 border-2 border-gray-800 hover:bg-gray-800/50">

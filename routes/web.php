@@ -7,4 +7,4 @@ Route::get('/', [MainController::class, 'index'])->name('posts.index');
 
 Route::get('/sitemap.xml', [MainController::class, 'sitemap']);
 
-Route::get('/posts/{post}', [MainController::class, 'show'])->name('posts.show');
+Route::get('/{slug}', [MainController::class, 'show'])->name('posts.show');

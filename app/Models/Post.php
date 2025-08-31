@@ -16,4 +16,9 @@ class Post extends Model
         'publish_status',
         'image'
     ];
+
+    public function getUrl()
+    {
+        return route('posts.show', ['slug' => $this->slug]);
+    }
 }
